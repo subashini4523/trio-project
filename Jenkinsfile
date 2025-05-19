@@ -8,15 +8,15 @@ pipeline {
         }
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t jenifer-app:latest .'
+                sh 'docker build -t trio-app:latest .'
             }
         }
         stage('Push to DockerHub') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                     sh 'echo $PASS | docker login -u $USER --password-stdin'
-                    sh 'docker tag jenifer-app:latest $USER/jenifer-app:latest'
-                    sh 'docker push $USER/jenifer-app:latest'
+                    sh 'docker tag trio-app:latest $USER/trio-app:latest'
+                    sh 'docker push $USER/trio-app:latest'
                 }
             }
         }
