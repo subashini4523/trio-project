@@ -1,18 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: jenifer-ingress
+  name: trio-ingress
   annotations:
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: jenifer.local
+    - host: trio.local
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: jenifer-service
+                name: trio-service
                 port:
                   number: 80
