@@ -1,15 +1,15 @@
 provider "docker" {}
 
-resource "docker_image" "jenifer" {
-  name         = "jenifer-app"
+resource "docker_image" "trio" {
+  name         = "trio-app"
   build {
     context    = "${path.module}/.."
   }
 }
 
-resource "docker_container" "jenifer" {
-  image = docker_image.jenifer.latest
-  name  = "jenifer-container"
+resource "docker_container" "trio" {
+  image = docker_image.trio.latest
+  name  = "trio-container"
   ports {
     internal = 5000
     external = 5000
