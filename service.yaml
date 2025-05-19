@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: jenifer-service
+  name: trio-service
 spec:
   selector:
-    app: jenifer-app
+    app: trio-app
   ports:
     - port: 80
       targetPort: 5000
