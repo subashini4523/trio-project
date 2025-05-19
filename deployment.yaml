@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: jenifer-app
+  name: trio-app
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: jenifer-app
+      app: trio-app
   template:
     metadata:
       labels:
-        app: jenifer-app
+        app: trio-app
     spec:
       containers:
         - name: app
-          image: yourdockerhub/jenifer-app:latest
+          image: yourdockerhub/trio-app:latest
           ports:
             - containerPort: 5000
